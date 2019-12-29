@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019. All rights reserved.
+  ~ Samsruti Dash
+  ~ sam.sipun@gmail.com
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selectedTrip"
+            type="com.frostinteractive.samsruti.tripapp.network.TripProperty" />
+
+        <variable
+            name="userTripViewModel"
+            type="com.frostinteractive.samsruti.tripapp.MapsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:max="@{userTripViewModel.size}"
+            app:layout_constraintBottom_toTopOf="@+id/duration_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="123dp" />
+
+        <TextView
+            android:id="@+id/rpm_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginBottom="16dp"
+            android:text="@{userTripViewModel.displayRPM}"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/seekbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map"
+            tools:text="RPM 136.0" />
+
+        <TextView
+            android:id="@+id/speed_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{userTripViewModel.displaySpeed}"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/rpm_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rpm_tv"
+            tools:text="Speed: 136.0 mph" />
+
+        <TextView
+            android:id="@+id/duration_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_timer"
+            android:drawablePadding="8dp"
+            android:gravity="center|fill"
+            android:text="@string/time_min"
+            app:layout_constraintBaseline_toBaselineOf="@+id/location_tv"
+            app:layout_constraintEnd_toStartOf="@+id/total_miles_tv"
+            app:layout_constraintStart_toEndOf="@+id/location_tv" />
+
+        <TextView
+            android:id="@+id/total_miles_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_speedometer"
+            android:drawablePadding="8dp"
+            android:gravity="center|fill"
+            android:text="@{userTripViewModel.distance}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/duration_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/duration_tv"
+            tools:text="500 meters" />
+
+        <TextView
+            android:id="@+id/location_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_arrow"
+            android:drawablePadding="8dp"
+            android:gravity="center|fill"
+            android:text="@string/location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/duration_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="duration_tv,total_miles_tv,location_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,14 @@
+<!--
+  ~ Copyright (c) 2019. All rights reserved.
+  ~ Samsruti Dash
+  ~ sam.sipun@gmail.com
+  -->
+
+<resources>
+    <string name="app_name">TripApp</string>
+    <string name="rpm_value">RPM : %.1f</string>
+    <string name="speed_value_mph">Speed : %.1f mph</string>
+    <string name="time_min">29 min</string>
+    <string name="miles_value">%.1f meters</string>
+    <string name="location">Telangana</string>
+</resources>

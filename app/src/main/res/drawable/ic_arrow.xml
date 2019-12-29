@@ -1,0 +1,16 @@
+<!--
+  ~ Copyright (c) 2019. All rights reserved.
+  ~ Samsruti Dash
+  ~ sam.sipun@gmail.com
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0">
+    <path
+        android:fillColor="#A9B8D4"
+        android:fillType="evenOdd"
+        android:pathData="m11.148,13.292l-8.128,-0.145l17.963,-10.53l-9.026,18.764l-0.809,-8.089zM9.074,15.543l-6.095,-0.109c-1.025,-0.019 -1.913,-0.716 -2.172,-1.708c-0.259,-0.992 0.171,-2.035 1.057,-2.553l17.963,-10.53c0.868,-0.509 1.966,-0.391 2.706,0.291c0.74,0.682 0.947,1.768 0.511,2.673l-9.026,18.764c-0.445,0.924 -1.448,1.439 -2.458,1.262c-1.01,-0.177 -1.778,-1.005 -1.879,-2.025l-0.608,-6.066z" />
+</vector>
